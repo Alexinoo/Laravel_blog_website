@@ -20,3 +20,11 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// Set a prefix using prefix group function
+//admin/route    e.g admin/dashboard
+
+Route::prefix('admin')->group(function(){
+
+    Route::get('dashboard',[  App\Http\Controllers\Admin\DashboardController::class, 'index' ]);
+});
