@@ -1,5 +1,7 @@
 @extends('layouts.master')
 
+@section('title','Blog Dashboard')
+
 @section('content')
 
  <div class="container-fluid px-4">
