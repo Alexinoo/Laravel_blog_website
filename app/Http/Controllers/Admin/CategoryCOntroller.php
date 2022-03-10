@@ -11,4 +11,9 @@ class CategoryController extends Controller
 
         return view('Admin.Category.index');
     }
+
+    public function create(){
+
+        return view('Admin.Category.create');
+    }
 }
