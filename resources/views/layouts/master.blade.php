@@ -29,6 +29,9 @@
 
                          <div id="layoutSidenav_content">
                             <main>
+                              
+                            </main>
+                         </div>
             </div>
 
           <script src ="{{ asset('assets/js/bootstrap.bundle.min.js')}}" ></script>
