@@ -16,4 +16,10 @@ class CategoryController extends Controller
 
         return view('Admin.Category.create');
     }
+
+    public function store(CategoryFormRequest $request){
+
+
+        return $request->input();
+    }
 }
