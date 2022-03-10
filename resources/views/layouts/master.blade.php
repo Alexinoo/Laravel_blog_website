@@ -29,8 +29,9 @@
 
                          <div id="layoutSidenav_content">
                             <main>
-                              
+
                             </main>
+                               @include('layouts.inc.admin-footer')
                          </div>
             </div>
 
