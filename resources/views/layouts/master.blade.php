@@ -22,7 +22,10 @@
 <body>
 
         @include('layouts.inc.admin-navbar')
-        
+
+            <div id="layoutSidenav">
+
+            </div>
           <script src ="{{ asset('assets/js/bootstrap.bundle.min.js')}}" ></script>
           
         <script src="{{ asset('assets/js/scripts.js')}}"></script>
