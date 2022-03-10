@@ -25,7 +25,10 @@
 
             <div id="layoutSidenav">
 
+                      @include('layouts.inc.admin-navbar')
+                      
             </div>
+
           <script src ="{{ asset('assets/js/bootstrap.bundle.min.js')}}" ></script>
           
         <script src="{{ asset('assets/js/scripts.js')}}"></script>
