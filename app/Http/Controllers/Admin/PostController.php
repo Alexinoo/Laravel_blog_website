@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Post;
 use App\Http\Requests\Admin\PostFormRequest;
 use App\Models\Category;
@@ -13,7 +14,11 @@ class PostController extends Controller
     public function index()
     {
 
-        return view('Admin.post.index');
+        $posts = Post::all();
+
+        return view('Admin.post.index', [
+            'posts' => $posts
+        ]);
     }
 
     public function create()
@@ -40,6 +45,7 @@ class PostController extends Controller
         $model->meta_description = $data['meta_description'];
         $model->meta_keyword = $data['meta_keyword'];
         $model->status = $request->status == true ? 1 : 0;
+        $model->created_by = $request->created_by = Auth::user()->id;
         $model->save();
 
         return redirect('admin/posts')->with('status', 'Post Added Successfully');
