@@ -25,13 +25,10 @@ class CategoryController extends Controller
     }
 
     public function store(CategoryFormRequest $request){
-
         // Fetch validated data
         $data  = $request->validated();
-
         // Bring in the Model
-        $model = new Category;
-        
+        $model = new Category;        
         // Fetch validated data and store
         $model->name = $data['name'];
         $model->slug = $data['slug'];
@@ -73,4 +70,46 @@ class CategoryController extends Controller
            'category' => $category
        ]);
     }
+
+       public function update( CategoryFormRequest $request , $category_id ){
+
+          // Fetch validated data
+        $data  = $request->validated();
+        // Bring in the Model
+        $model = Category::find($category_id);        
+        // Fetch validated data and store
+        $model->name = $data['name'];
+        $model->slug = $data['slug'];
+        $model->description = $data['description'];
+
+        //Slightly different with image - Check if $data has file of type image
+
+        if($request->hasfile('image')){
+            // if so store in variable file
+            $file = $request->file('image');
+            // get file extension
+            $filename = time().'.'.$file->getClientOriginalExtension();
+            //Use move() to upload the file in the uploads folder
+            //Takes 2 parameters - ( location , filename )
+            $file->move('uploads/category/' , $filename);
+            //Save the filename in the db
+            $model->image = $filename;             
+        }
+        //Get the rest of the fields
+          $model->meta_title = $data['meta_title'];
+          $model->meta_description = $data['meta_description'];
+          $model->meta_keyword = $data['meta_keyword'];
+
+          $model->navbar_status = $request->navbar_status == true ? 1 :0;
+          
+          $model->status = $request->status == true ? 1 :0;
+          $model->created_by = Auth::user()->id;
+
+        //   Save data into table categories
+          $model->update();
+
+          return redirect('admin/category')->with('status','Category Updated Successfully');
+    }
+
+
 }
