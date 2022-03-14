@@ -51,8 +51,7 @@ class CategoryFormRequest extends FormRequest
             'required',
         ],
         'image' => [
-            'required',
-           //     'image'
+            'nullable',
           'mimes:jpeg,jpg,png,gif',
         ],
 
@@ -72,11 +71,9 @@ class CategoryFormRequest extends FormRequest
 
           'navbar_status' => [
              'nullable',
-            'boolean',
         ],
           'status' => [
              'nullable',
-            'boolean',
         ],
             
 
