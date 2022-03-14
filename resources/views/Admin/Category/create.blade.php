@@ -13,6 +13,14 @@
                         </div>
                         <div class="card-body">
 
+                            @if($errors->any())
+                            <div class="alert alert-danger">
+                                 @foreach($errors->all() as $error)
+                                <div class="">{{ $error}}</div>
+                            @endforeach
+                            </div>  
+                            @endif
+
                             <form action=" {{ url('admin/add-category')}} " method="POST">
                                 @csrf
 
