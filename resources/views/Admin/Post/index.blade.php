@@ -28,6 +28,7 @@
                             <th>Category</th>
                             <th>Name</th>
                             <th>Status</th>
+                            <th>Edit</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -39,6 +40,9 @@
                             <td>{{$post->category->name}}</td>
                             <td>{{$post->name}}</td>
                             <td>{{$post->status == 1 ? 'Hidden' : 'Visible'}}</td>
+                            <td>
+                                <a href="{{ url('admin/post/'.$post->id )}}" class="btn btn-primary btn-sm">Edit</a>
+                            </td>                           
                         </tr>
                         @endforeach
                       
