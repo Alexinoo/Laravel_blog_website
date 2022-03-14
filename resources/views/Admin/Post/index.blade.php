@@ -8,7 +8,6 @@
  <div class="container-fluid px-4">
 
     <div class="card mt-2">
-
         <div class="card-header">
             <h4> View Posts
 
@@ -18,7 +17,29 @@
         </div>
 
         <div class="card-body">
-            Your content
+                @if(session('status'))
+                            <div class="alert alert-success">{{session('status')}}</div>
+                        @endif
+
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($posts as $post)
+                        <tr>
+                            <td>{{$post->id}}</td>
+                            <td>{{$post->name}}</td>
+                            <td>{{$post->status == 1 ? 'Hidden' : 'Visible'}}</td>
+                        </tr>
+                        @endforeach
+                      
+                    </tbody>
+                </table>
         </div>
     </div>
 
