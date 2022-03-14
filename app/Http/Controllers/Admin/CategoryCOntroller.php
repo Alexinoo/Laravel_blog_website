@@ -123,5 +123,19 @@ class CategoryController extends Controller
           return redirect('admin/category')->with('status','Category Updated Successfully');
     }
 
+    public function destroy($category_id){
+
+        $category = Category::find($category_id);
+
+        if($category){
+            $category->delete();
+        }else{
+            return "No category Found";
+        }
+
+
+         return redirect('admin/category')->with('status','Category Deleted Successfully');
+    }
+
 
 }
