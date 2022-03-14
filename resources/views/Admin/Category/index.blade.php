@@ -41,7 +41,7 @@
                                             </td>
                                              <td>{{$category->status == 1 ? 'Hidden' : 'Shown'}}</td>
                                              <td>
-                                                 <a href="{{ url('admin/edit-category')}}" class="btn btn-primary btn-sm">Edit</a>
+                                                 <a href="{{ url('admin/edit-category/'.$category->id )}}" class="btn btn-primary btn-sm">Edit</a>
                                              </td>
                                 </tr>
                                 @endforeach
