@@ -20,6 +20,7 @@
         <div class="card-body">
 
             <form action="{{ url('admin/add-post')}}" method="POST">
+                @csrf
 
                 <div class="form-group mb-3">
                     <label for=""> Category</label>
