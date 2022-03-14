@@ -12,4 +12,9 @@ class PostController extends Controller
 
         return view('Admin.post.index');
     }
+
+    public function create(){
+
+        return view('Admin.post.create');
+    }
 }
