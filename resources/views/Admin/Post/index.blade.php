@@ -25,6 +25,7 @@
                     <thead>
                         <tr>
                             <th>ID</th>
+                            <th>Category</th>
                             <th>Name</th>
                             <th>Status</th>
                         </tr>
@@ -33,6 +34,9 @@
                         @foreach($posts as $post)
                         <tr>
                             <td>{{$post->id}}</td>
+
+                            {{-- Added category function in the Posts model --}}
+                            <td>{{$post->category->name}}</td>
                             <td>{{$post->name}}</td>
                             <td>{{$post->status == 1 ? 'Hidden' : 'Visible'}}</td>
                         </tr>
