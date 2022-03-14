@@ -43,7 +43,7 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function(){
 
 
       Route::get('posts',[ App\Http\Controllers\Admin\PostController::class, 'index' ]);
-      Route::get('add-post',[ App\Http\Controllers\Admin\PostController::class, 'index' ]);
+      Route::get('add-post',[ App\Http\Controllers\Admin\PostController::class, 'create' ]);
  
 });
 
