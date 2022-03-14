@@ -52,7 +52,8 @@ class CategoryFormRequest extends FormRequest
         ],
         'image' => [
             'required',
-            'image'
+           //     'image'
+           'mimes:jpeg,jpg,png'
         ],
 
           'meta_title' => [
