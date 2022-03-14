@@ -65,4 +65,12 @@ class CategoryController extends Controller
           return redirect('admin/category')->with('status','Category Added Successfully');
       
     }
+
+     public function edit( $id){
+
+       $category = Category::find( $id);
+       return view('Admin.Category.edit',[
+           'category' => $category
+       ]);
+    }
 }
