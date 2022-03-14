@@ -129,12 +129,24 @@ class CategoryController extends Controller
 
         if($category){
             $category->delete();
+
+              $destination = 'uploads/category/'. $category->image;
+            // /Check if image exists in the destination folder
+            if(File::exists($destination)){
+                 // IF SO - DELETE
+                 File::delete($destination);
+            }
+
+               return redirect('admin/category')->with('status','Category Deleted Successfully');
+
         }else{
-            return "No category Found";
+
+
+            return "No Category ID Found";
         }
 
 
-         return redirect('admin/category')->with('status','Category Deleted Successfully');
+      
     }
 
 
