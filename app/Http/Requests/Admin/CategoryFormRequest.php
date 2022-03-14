@@ -13,7 +13,11 @@ class CategoryFormRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        //changed from 
+       //   return false;
+
+        // to true
+        return true;
     }
 
     /**
@@ -23,8 +27,60 @@ class CategoryFormRequest extends FormRequest
      */
     public function rules()
     {
-        return [
+        //changed from
+       // return [
             //
+      //  ];
+
+      //changed to
+       $rules =  [
+          
+        // Validate on all input fields
+        'name' => [
+            'required',
+            'string',
+            'max:200'
+        ],
+
+        'slug' => [
+            'required',
+            'string',
+            'max:200'
+        ],
+        'description' => [
+            'required',
+        ],
+        'image' => [
+            'required',
+            'image'
+        ],
+
+          'meta_title' => [
+             'required',
+            'string',
+            'max:200'
+        ],
+          'meta_description' => [
+             'required',
+            'string',
+        ],
+          'meta_keyword' => [
+             'required',
+            'string',
+        ],
+
+          'navbar_status' => [
+             'required',
+            'boolean',
+        ],
+          'status' => [
+             'required',
+            'boolean',
+        ],
+            
+
         ];
+
+      return $rules;
     }
 }
