@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\CategoryFormRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 use App\Models\Category;
 
 class CategoryController extends Controller
@@ -82,10 +83,21 @@ class CategoryController extends Controller
         $model->slug = $data['slug'];
         $model->description = $data['description'];
 
-        //Slightly different with image - Check if $data has file of type image
+        //LOGIC - Delete from destination and upload a new image
 
         if($request->hasfile('image')){
-            // if so store in variable file
+
+            $destination = 'uploads/category/'. $model->image;
+          
+            // /Check if image exists in the destination folder
+            if(File::exists($destination)){
+
+                 // IF SO - DELETE
+                 File::delete($destination);
+            }
+
+            //PROCEED WITH THE UPLOAD
+           
             $file = $request->file('image');
             // get file extension
             $filename = time().'.'.$file->getClientOriginalExtension();
