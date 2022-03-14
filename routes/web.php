@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Admin\CategoryController;
 
 /*
@@ -25,26 +26,23 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // Set a prefix using prefix group function
 //admin/route    e.g admin/dashboard
 
-Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function(){
+Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
 
-    Route::get('dashboard',[ App\Http\Controllers\Admin\DashboardController::class, 'index' ]);
-    
-    Route::get('category',[ App\Http\Controllers\Admin\CategoryController::class, 'index' ]);
+    Route::get('dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index']);
 
-    Route::get('add-category',[ App\Http\Controllers\Admin\CategoryController::class, 'create' ]);
+    Route::get('category', [App\Http\Controllers\Admin\CategoryController::class, 'index']);
 
-    Route::post('add-category',[ App\Http\Controllers\Admin\CategoryController::class, 'store' ]);
+    Route::get('add-category', [App\Http\Controllers\Admin\CategoryController::class, 'create']);
 
-    Route::get('edit-category/{category_id}',[ App\Http\Controllers\Admin\CategoryController::class, 'edit' ]);
+    Route::post('add-category', [App\Http\Controllers\Admin\CategoryController::class, 'store']);
 
-    Route::put('update-category/{category_id}',[ App\Http\Controllers\Admin\CategoryController::class, 'update' ]);
+    Route::get('edit-category/{category_id}', [App\Http\Controllers\Admin\CategoryController::class, 'edit']);
 
-    Route::get('delete-category/{category_id}',[ App\Http\Controllers\Admin\CategoryController::class, 'destroy' ]);
+    Route::put('update-category/{category_id}', [App\Http\Controllers\Admin\CategoryController::class, 'update']);
+
+    Route::get('delete-category/{category_id}', [App\Http\Controllers\Admin\CategoryController::class, 'destroy']);
 
 
-      Route::get('posts',[ App\Http\Controllers\Admin\PostController::class, 'index' ]);
-      Route::get('add-post',[ App\Http\Controllers\Admin\PostController::class, 'create' ]);
- 
+    Route::get('posts', [App\Http\Controllers\Admin\PostController::class, 'index']);
+    Route::get('add-post', [App\Http\Controllers\Admin\PostController::class, 'create']);
 });
-
-
