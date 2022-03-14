@@ -35,24 +35,24 @@ class CategoryController extends Controller
 
         //Slightly different with image - Check if $data has file of type image
 
-        if($data->hasfile('image')){
+        if($request->hasfile('image')){
             // if so store in variable file
-            $file = $data->file('image');
+            $file = $request->file('image');
             // get file extension
             $filename = time().'.'.$file->getClientOriginalExtension();
             //Use move() to upload the file in the uploads folder
             //Takes 2 parameters - ( location , filename )
             $file->move('uploads/category/' , $filename);
             //Save the filename in the db
-            $category->image = $filename;             
+            $model->image = $filename;             
         }
         //Get the rest of the fields
           $model->meta_title = $data['meta_title'];
           $model->meta_description = $data['meta_description'];
           $model->meta_keyword = $data['meta_keyword'];
 
-          $model->navbar_status = $data['navbar_status'];
-          $model->status = $data['status'];
+          $model->navbar_status = $request->navbar_status == true ? 1 :0;
+          $model->status = $request->status == true ? 1 :0;
           $model->created_by = Auth::user()->id;
 
         //   Save data into table categories
