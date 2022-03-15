@@ -21,7 +21,7 @@
                             <div class="alert alert-success">{{session('status')}}</div>
                         @endif
 
-                <table class="table table-bordered">
+                <table class="table table-bordered" id="myDataTable">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -29,6 +29,7 @@
                             <th>Name</th>
                             <th>Status</th>
                             <th>Edit</th>
+                            <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody>
