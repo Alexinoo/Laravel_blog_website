@@ -33,7 +33,7 @@
                                     <td>{{ $user->email}}</td>
                                     <td>{{ $user->role_as == 1 ? 'Admin' : 'User'}}</td>
                                     <td>
-                                        <a href="{{ url('admin/user/{user_id}')}}" class="btn btn-primary btn-sm">Edit</a>
+                                        <a href="{{ url('admin/user/'. $user->id)}}" class="btn btn-primary btn-sm">Edit</a>
                                     </td>
                                 </tr>
                                     
