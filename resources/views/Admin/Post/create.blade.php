@@ -52,7 +52,7 @@
 
                  <div class="form-group mb-3">
                     <label for="">Description</label>
-                   <textarea name="description" id=""rows="3" class="form-control"></textarea>
+                   <textarea name="description" id="mySummernote" rows="3" class="form-control"></textarea>
                 </div>
 
                    <div class="form-group mb-3">
