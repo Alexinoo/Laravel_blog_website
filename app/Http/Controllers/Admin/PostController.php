@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Post;
 use App\Http\Requests\Admin\PostFormRequest;
 use App\Models\Category;
+use Illuminate\Support\Str;
 
 class PostController extends Controller
 {
@@ -38,7 +39,9 @@ class PostController extends Controller
 
         $model->category_id = $data['category_id'];
         $model->name = $data['name'];
-        $model->slug = $data['slug'];
+
+        $model->slug = Str::slug($data['slug']);
+
         $model->description = $data['description'];
         $model->yt_iframe = $data['yt_iframe'];
         $model->meta_title = $data['meta_title'];
@@ -72,7 +75,9 @@ class PostController extends Controller
 
         $model->category_id = $data['category_id'];
         $model->name = $data['name'];
-        $model->slug = $data['slug'];
+
+        $model->slug = Str::slug($data['slug']);
+
         $model->description = $data['description'];
         $model->yt_iframe = $data['yt_iframe'];
         $model->meta_title = $data['meta_title'];
