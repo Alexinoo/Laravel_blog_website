@@ -23,6 +23,26 @@
 
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+
+    {{-- Datatables cdn css --}}
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+
+    {{-- Datatables Bootstrap css cdn--}}
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
+
+    {{-- Added Custom css since  --}}
+    <style>
+        /*  To fix pagination button*/
+      .dataTables_wrapper .dataTables_paginate .paginate_button{
+            padding: 0px !important;
+            margin: 0px !important;
+    }
+
+    /* To fix limit no of pages dropdown */
+    div.dataTables_wrapper div.dataTables_length select {
+    width: 50%;
+}
+    </style>
 </head>
 <body>
 
@@ -47,15 +67,29 @@
         <script src="{{ asset('assets/js/scripts.js')}}"></script>
 
         {{-- Summer note JS --}}
-        <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
-
+        <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js">
+        </script>
         <script>
-    $(document).ready(function() {
-        $("#mySummernote").summernote({
-            height :150,
-        });
-        $('.dropdown-toggle').dropdown();
-    });
-</script>
+            $(document).ready(function() {
+                $("#mySummernote").summernote({
+                    height :150,
+                });
+                $('.dropdown-toggle').dropdown();
+
+            });
+        </script>
+
+        {{-- Datatable cdn JS --}}
+        <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+        
+        {{--  Datatables Bootstrap js cdn--}}
+        <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+            <script>
+            $(document).ready(function() {
+              $('#myDataTable').DataTable();
+            });
+        </script>
+
+
     </body>
 </html>
