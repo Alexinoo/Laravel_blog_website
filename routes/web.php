@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers\Admin\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +29,8 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
 
     Route::get('dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index']);
 
+    // Category
+
     Route::get('category', [App\Http\Controllers\Admin\CategoryController::class, 'index']);
 
     Route::get('add-category', [App\Http\Controllers\Admin\CategoryController::class, 'create']);
@@ -43,6 +44,8 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('delete-category/{category_id}', [App\Http\Controllers\Admin\CategoryController::class, 'destroy']);
 
 
+    // POSTS
+
     Route::get('posts', [App\Http\Controllers\Admin\PostController::class, 'index']);
 
     Route::get('add-post', [App\Http\Controllers\Admin\PostController::class, 'create']);
@@ -55,4 +58,7 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
 
 
     Route::get('delete-post/{post_id}', [App\Http\Controllers\Admin\PostController::class, 'destroy']);
+
+    // USERS
+    Route::get('users', [App\Http\Controllers\Admin\UserController::class, 'index']);
 });
