@@ -14,13 +14,11 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/', [App\Http\Controllers\Frontend\FrontendController::class, 'index']);
 
 // Set a prefix using prefix group function
 //admin/route    e.g admin/dashboard
