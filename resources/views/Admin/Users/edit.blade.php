@@ -50,7 +50,7 @@
 
                           <div class="mb-3">
                             <label >Role As </label>
-                            <select name="" id="" class="form-control">
+                            <select name="role_as" id="" class="form-control">
                                 <option value="1" {{ $user->role_as == 1 ? 'selected' : ''}}>Admin</option>
                                 <option value="0" {{ $user->role_as == 0 ? 'selected' : ''}}>User</option>
                                 <option value="2" {{ $user->role_as == 2 ? 'selected' : ''}}>Blogger</option>
@@ -59,7 +59,7 @@
 
                            <div class="col-md-8">
                         <div class="mb-3">
-                            <button type="submit" class="btn btn-primary float-end">Update user</button>
+                            <button type="submit" class="btn btn-primary float-end">Update user role</button>
                         </div>
                     </div>
 
