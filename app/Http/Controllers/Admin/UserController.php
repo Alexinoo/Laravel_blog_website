@@ -17,4 +17,14 @@ class UserController extends Controller
             'users' => $users
         ]);
     }
+
+    public function edit($user_id)
+    {
+
+        $user = User::find($user_id);
+
+        return view('Admin.Users.edit', [
+            'user' => $user
+        ]);
+    }
 }
