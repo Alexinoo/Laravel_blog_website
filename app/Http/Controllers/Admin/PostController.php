@@ -84,4 +84,14 @@ class PostController extends Controller
 
         return redirect('admin/posts')->with('status', 'Post Updated Successfully');
     }
+
+    public function destroy($post_id)
+    {
+
+        $post = Post::find($post_id);
+
+        $post->delete();
+
+        return redirect('admin/posts')->with('status', 'Post Deleted Successfully');
+    }
 }
