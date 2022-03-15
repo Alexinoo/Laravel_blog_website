@@ -27,4 +27,19 @@ class UserController extends Controller
             'user' => $user
         ]);
     }
+
+    public function update(Request $request, $user_id)
+    {
+
+        $user = User::find($user_id);
+
+        if ($user) {
+            $user->role_as = $request->role_as;
+
+            $user->update();
+
+            return redirect('admin/users')->with('status', 'User Updated successfully');
+        }
+        return redirect('admin/users')->with('status', 'No User found');
+    }
 }
