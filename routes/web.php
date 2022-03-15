@@ -64,4 +64,6 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
 
 
     Route::get('user/{user_id}', [App\Http\Controllers\Admin\UserController::class, 'edit']);
+
+    Route::put('update-user/{user_id}', [App\Http\Controllers\Admin\UserController::class, 'update']);
 });
