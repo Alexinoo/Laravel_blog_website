@@ -61,4 +61,7 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
 
     // USERS
     Route::get('users', [App\Http\Controllers\Admin\UserController::class, 'index']);
+
+
+    Route::get('user/{user_id}', [App\Http\Controllers\Admin\UserController::class, 'edit']);
 });
