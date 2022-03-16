@@ -46,7 +46,9 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
 
     Route::put('update-category/{category_id}', [App\Http\Controllers\Admin\CategoryController::class, 'update']);
 
-    Route::get('delete-category/{category_id}', [App\Http\Controllers\Admin\CategoryController::class, 'destroy']);
+    // Commented to delete with confirmation Modal
+    // Route::get('delete-category/{category_id}', [App\Http\Controllers\Admin\CategoryController::class, 'destroy']);
+    Route::post('delete-category', [App\Http\Controllers\Admin\CategoryController::class, 'destroy']);
 
 
     // POSTS
