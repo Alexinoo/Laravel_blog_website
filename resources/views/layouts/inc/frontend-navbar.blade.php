@@ -58,7 +58,6 @@
                                     <a class="nav-link" href="{{ url('tutorial/'.$category->slug)}}">{{$category->name }}</a>
                                     </li>                                    
                                     @endforeach
-                                       
                                    
                             </ul>
 
