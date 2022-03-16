@@ -136,7 +136,6 @@ class CategoryController extends Controller
     $category = Category::find($request->category_delete_id);
 
     if ($category) {
-      $category->delete();
 
       $destination = 'uploads/category/' . $category->image;
       // /Check if image exists in the destination folder
@@ -144,6 +143,12 @@ class CategoryController extends Controller
         // IF SO - DELETE
         File::delete($destination);
       }
+
+      // Delete category and it's posts
+      $category->posts()->delete();
+
+      //Delete category itself
+      $category->delete();
 
       return redirect('admin/category')->with('status', 'Category Deleted with its posts Successfully');
     } else {
