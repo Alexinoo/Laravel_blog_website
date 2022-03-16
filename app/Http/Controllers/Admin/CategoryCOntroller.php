@@ -128,10 +128,12 @@ class CategoryController extends Controller
     return redirect('admin/category')->with('status', 'Category Updated Successfully');
   }
 
-  public function destroy($category_id)
+  // Modified to use Modal delete confirmation
+
+  public function destroy(Request $request)
   {
 
-    $category = Category::find($category_id);
+    $category = Category::find($request->category_delete_id);
 
     if ($category) {
       $category->delete();
@@ -143,10 +145,8 @@ class CategoryController extends Controller
         File::delete($destination);
       }
 
-      return redirect('admin/category')->with('status', 'Category Deleted Successfully');
+      return redirect('admin/category')->with('status', 'Category Deleted with its posts Successfully');
     } else {
-
-
       return "No Category ID Found";
     }
   }
