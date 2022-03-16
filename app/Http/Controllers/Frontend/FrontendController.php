@@ -29,7 +29,7 @@ class FrontendController extends Controller
             $posts = Post::where([
                 'category_id' => $category->id,
                 'status' => 0
-            ])->get();
+            ])->paginate(2);
 
             return view('Frontend.post.index', [
                 'posts' => $posts,
