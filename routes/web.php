@@ -20,6 +20,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/', [App\Http\Controllers\Frontend\FrontendController::class, 'index']);
 
+// Tutorials
+Route::get('tutorial/{category_slug}', [App\Http\Controllers\Frontend\FrontendController::class, 'viewCategoryPost']);
+
 // Set a prefix using prefix group function
 //admin/route    e.g admin/dashboard
 
