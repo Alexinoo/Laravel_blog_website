@@ -39,7 +39,11 @@ class FrontendController extends Controller
 
             $post = Post::where(['category_id' => $category->id, 'slug' =>  $post_slug])->first();
 
-            return view('Frontend.post.view', ['post' => $post]);
+            // View Latest post - orderBy function ->orderBy('created_at' , 'ASC')
+            //Also take 2/3 records - Available records - 3 
+            $latest_posts = Post::where(['category_id' => $category->id])->orderBy('created_at', 'DESC')->get()->take(10);
+
+            return view('Frontend.post.view', ['post' => $post, 'latest_posts' =>  $latest_posts]);
         } else {
             return redirect('/');
         }
