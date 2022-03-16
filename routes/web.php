@@ -23,6 +23,10 @@ Route::get('/', [App\Http\Controllers\Frontend\FrontendController::class, 'index
 // Tutorials
 Route::get('tutorial/{category_slug}', [App\Http\Controllers\Frontend\FrontendController::class, 'viewCategoryPost']);
 
+//View Post
+
+Route::get('tutorial/{category_slug}/{post_slug}', [App\Http\Controllers\Frontend\FrontendController::class, 'viewPost']);
+
 // Set a prefix using prefix group function
 //admin/route    e.g admin/dashboard
 
