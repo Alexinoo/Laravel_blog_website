@@ -14,9 +14,12 @@
                 @forelse($posts as $post )                  
                 <div class="card card-shadow mt-4">
                     <div class="card-body">
-                        <a href=" {{ url('tutorial/'.$category->slug.'/'.$post->slug ) }}">
+                        <a href=" {{ url('tutorial/'.$category->slug.'/'.$post->slug ) }}" class="text-decoration-none">
                             <h2 class="post-heading">{{$post->name}}</h2>
                         </a>
+                        <h6>Posted by {{ $post->user->name }}  
+                            <span class="ms-1">on {{ $post->created_at->format('d-m-Y') }}</span>
+                        </h6>
                     </div>
                 </div>
                  @empty
