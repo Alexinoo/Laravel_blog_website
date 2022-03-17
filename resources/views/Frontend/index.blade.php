@@ -36,7 +36,7 @@
 {{-- Advertising --}}
 <div class="py-1 bg-gray">
     <div class="container">
-        <div class="border p-3">
+        <div class="border text-center p-3">
             <h3>Advertise here</h3>
         </div>
     </div>
@@ -77,10 +77,39 @@
                   </div>                                 
             </div>
          @endforeach 
-         
+
         </div>
     </div>
 </div>
+
+{{-- Posts section--}}
+<div class="py-5 bg-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h4>Latest Posts</h4>
+                <div class="underline"></div>
+            </div>
+
+            <div class="col-md-8">
+                   @foreach($latest_posts as  $latest_post) 
+                            <div class="card card-body bg-gray shadow mb-3">
+                                    <a href="{{ url('tutorial/'.$latest_post->category->slug.'/'.$latest_post->slug)}}" class="text-decoration-none">
+                                         <h4 class="text-dark mb-0">{{ $latest_post->name}}</h4>
+                                </a>
+                                <h6>Posted On : {{ $latest_post->created_at->format('d-m-Y')}}</h6>
+                            </div>    
+                      @endforeach 
+                 </div>
+
+                    <div class="col-md-4">
+                        <div class="border text-center p-3">
+                                <h3>Advertise here</h3>
+                        </div>
+                    </div>   
+            </div>
+        </div>
+    </div>
 
 
 @endsection
