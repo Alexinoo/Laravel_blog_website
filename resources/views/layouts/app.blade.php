@@ -26,6 +26,10 @@
     
     {{-- Custom-styles --}}
     <link href="{{ asset('assets/css/custom.css') }}" rel="stylesheet">
+    
+    {{-- Owl Carousel css --}}
+    <link href="{{ asset('assets/css/owl.carousel.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/owl.theme.default.min.css') }}" rel="stylesheet">
 
 
 </head>
@@ -34,13 +38,40 @@
       
         @include('layouts.inc.frontend-navbar')
 
-        <main class="py-4">
+        <main>
             @yield('content')
         </main>
     </div>
 
         <!-- Scripts -->
-    <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
+
+        {{-- Jquery --}}
     <script src="{{ asset('assets/js/jquery-3.6.0.min.js') }}"></script>
+
+    {{-- Bootstrap Bundle js --}}
+    <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
+    
+    {{-- Owl Carousel js --}}
+    <script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>
+
+    <script>
+        $('.category-carousel').owlCarousel({
+    loop:true,
+    margin:10,
+    nav:true,
+    dots:false,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:3
+        },
+        1000:{
+            items:4
+        }
+    }
+})
+    </script>
 </body>
 </html>
