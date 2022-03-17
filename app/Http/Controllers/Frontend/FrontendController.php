@@ -13,8 +13,11 @@ class FrontendController extends Controller
     {
         $categories = Category::where(['status' => 0])->get();
 
+        $latest_posts = Post::where(['status' => 0])->orderBy('created_at', 'DESC')->get()->take(10);
+
         return view('Frontend.index', [
-            'categories' => $categories
+            'categories' => $categories,
+            'latest_posts' => $latest_posts
         ]);
     }
 
