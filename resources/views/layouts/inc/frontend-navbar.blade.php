@@ -22,6 +22,10 @@
 <div class="sticky-top">
     <nav class="navbar navbar-expand-lg navbar-dark bg-green">
                 <div class="container">
+
+                    <a href="" class="navbar-brand d-inline d-sm-inline d-md-none">
+                        Navbar
+                    </a>
                 
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
