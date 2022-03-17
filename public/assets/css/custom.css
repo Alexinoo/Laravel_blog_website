@@ -40,3 +40,15 @@
   height: 28px;
   width: 38px !important;
 }
+
+/* Advertising area */
+.bg-gray {
+  background-color: #ddd;
+}
+
+.underline {
+  height: 3px;
+  width: 100px;
+  background-color: #e71212;
+  margin-bottom: 10px;
+}
