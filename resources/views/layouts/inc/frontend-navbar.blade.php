@@ -4,7 +4,7 @@
         <div class="row">
 
             {{-- logo --}}
-            <div class="col-md-3">
+            <div class="col-md-3 d-none d-sm-none d-md-inline">
                 <img src="{{ asset('assets/images/logo.svg')}}" class="w-100" alt="Logo" />
             </div>
 
