@@ -10,7 +10,6 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-
                <div class="owl-carousel category-carousel owl-theme">
 
                 @foreach($categories as $category)    
@@ -30,6 +29,18 @@
 
             </div>
         </div>
+        
     </div>
 </div>
+
+{{-- Advertising --}}
+<div class="py-1 bg-gray">
+    <div class="container">
+        <div class="border p-3">
+            <h3>Advertise here</h3>
+        </div>
+    </div>
+</div>
+
+
 @endsection
