@@ -63,7 +63,8 @@
     dots:false,
     responsive:{
         0:{
-            items:1
+            //Show 2 carousel per page
+            items:2
         },
         600:{
             items:3
