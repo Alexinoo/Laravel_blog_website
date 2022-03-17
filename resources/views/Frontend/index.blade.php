@@ -42,5 +42,22 @@
     </div>
 </div>
 
+{{-- About us section--}}
+<div class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h4>Coding Pro</h4>
+                <div class="underline"></div>
+                <p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum pariatur et asperiores dolorem, ducimus repellat laborum adipisci numquam in aliquid.
+
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas possimus error temporibus totam illum facere magni, vel quis minus inventore.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 @endsection
