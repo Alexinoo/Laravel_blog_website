@@ -1,5 +1,5 @@
 
-<div class="global-navbar">
+<div class="global-navbar bg-white">
     <div class="container">
         <div class="row">
 
@@ -16,8 +16,10 @@
             </div>
         </div>
     </div>
+</div>
 
     {{-- Bootstrap Navbar --}}
+<div class="sticky-top">
     <nav class="navbar navbar-expand-lg navbar-dark bg-green">
                 <div class="container">
                 
@@ -64,4 +66,4 @@
                         </div>
                 </div>
             </nav>
-</div>
+        </div>
