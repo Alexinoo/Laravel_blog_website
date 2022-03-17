@@ -11,8 +11,11 @@ class FrontendController extends Controller
 {
     public function index()
     {
+        $categories = Category::where(['status' => 0])->get();
 
-        return view('Frontend.index');
+        return view('Frontend.index', [
+            'categories' => $categories
+        ]);
     }
 
 
