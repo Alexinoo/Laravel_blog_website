@@ -44,6 +44,7 @@
                             <div class="alert alert-success">{{session('status')}}</div>
                         @endif
 
+                        <div class="table-responsive">
                         <table class="table table-bordered" id="myDataTable">
                             <thead>
                                 <tr>
@@ -78,7 +79,7 @@
                             
                             </tbody>
                         </table>
-
+                    </div>
                     </div>
                 </div>
                     
