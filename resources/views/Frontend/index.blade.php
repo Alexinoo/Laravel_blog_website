@@ -59,5 +59,28 @@
     </div>
 </div>
 
+{{-- Categories section--}}
+<div class="py-5 bg-gray">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h4>All Categories List</h4>
+                <div class="underline"></div>
+            </div>
+
+            @foreach($categories as $category)    
+            <div class="col-md-3">
+                  <div class="card card-body mb-3">
+                      <a href="{{ url('tutorial/'.$category->slug)}}" class="text-decoration-none">
+                          <h4 class="text-dark mb-0">{{ $category->name}}</h4>
+                      </a>
+                  </div>                                 
+            </div>
+         @endforeach 
+         
+        </div>
+    </div>
+</div>
+
 
 @endsection
