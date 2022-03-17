@@ -16,7 +16,7 @@
                @if(session('status'))
                             <div class="alert alert-success">{{session('status')}}</div>
                         @endif
-
+                    <div class="table-responsive">
                         <table class="table table-bordered" id="myDataTable">
                             <thead>
                                 <tr>
@@ -43,7 +43,7 @@
                                 @endforeach
                             </tbody>
                         </table>
-
+                      </div>    
                     </div>
                 </div>
                     
