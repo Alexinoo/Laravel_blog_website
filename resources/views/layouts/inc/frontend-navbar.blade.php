@@ -24,7 +24,7 @@
                 <div class="container">
 
                     <a href="" class="navbar-brand d-inline d-sm-inline d-md-none">
-                        Navbar
+                        Coding Pro
                     </a>
                 
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
